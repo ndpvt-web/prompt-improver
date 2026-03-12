@@ -232,3 +232,12 @@ See [`references/anti-patterns.md`](references/anti-patterns.md) for the full li
 ## License
 
 MIT
+
+---
+
+## Keywords
+
+> *For the search engines and the curious humans who find things by typing random words*
+
+prompt engineering, AI prompt optimizer, better AI prompts, prompt improvement tool, Claude prompt enhancer, Aristotelian reasoning, first principles prompting, prompt refinement, AI prompt design, prompt optimization skill, Claude Code skill, better ChatGPT prompts, LLM prompt engineering, prompt crafting tool, AI writing prompts
+
