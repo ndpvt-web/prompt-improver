@@ -50,6 +50,103 @@ Once context is clear, it produces a prompt structured around Aristotelian first
 
 ---
 
+## Example 2: Vague App Idea → Production Brief
+
+### Original prompt
+
+> I want to make an app that tracks my daily water intake — world class design, best possible app, millions of users at once
+
+### What the skill asked (clarification dialogue)
+
+- What environment will this run in? *(Claude Code / HappyCapy workspace confirmed)*
+- What stack is available? *(static HTML, CDN frameworks, no npm confirmed)*
+- What's the scalability requirement? *(millions of concurrent users confirmed)*
+- What does "world class design" mean to you? *(WCAG AA, mobile-first, micro-animations confirmed)*
+
+> The axioms in the improved prompt below are not invented — each one came from the user answering a real question.
+
+### Improved prompt (Aristotelian)
+
+```
+REASONING DIRECTIVE:
+Before writing a single line of code or making any design decision, you must
+reason from first principles. Identify the atomic, irreducible truths of this
+task. Interrogate each: "Can this be decomposed further? If removed, does the
+core goal break? Does it contradict anything?" Discard anything not strictly
+necessary. Build the solution deductively — every decision must trace to a
+stated axiom. Verify the final architecture against your axioms before
+producing output.
+
+GIVEN AXIOMS (treat these as ground truth — do not re-derive):
+- Environment: Claude Code in a HappyCapy workspace with full bash, file
+  write, and static file server access. No build step needed for static HTML.
+- Output path: ./outputs/ is served publicly as a static web server.
+- Stack available: HTML5, CSS3, vanilla JS, or any CDN-hosted framework
+  (React via CDN, Chart.js, Tailwind via CDN, etc.) without npm.
+- Scalability target: Architecture must support millions of concurrent users.
+  This means: stateless frontend, CDN-distributable assets, backend-agnostic
+  data layer (localStorage for MVP, with a clear upgrade path to
+  Supabase/Firebase/PostgreSQL).
+- Design bar: "World class" means: consistent design system, WCAG AA
+  accessibility, sub-100ms interactions, mobile-first responsive layout,
+  micro-animations that reinforce behavior, zero visual clutter.
+- Core domain truth: Water intake tracking has one irreducible job — reduce
+  the cognitive load of remembering to drink water and make progress visible
+  at a glance.
+
+TASK:
+Build a complete, production-quality daily water intake tracker web app and
+output it as a single self-contained file at ./outputs/water-tracker.html.
+
+METHOD (apply to this task):
+1. AXIOM DISCOVERY — Before coding, state aloud the irreducible truths of
+   this specific product:
+   - What is the minimum data model that cannot be removed without breaking
+     the app?
+   - What is the minimum UI surface that cannot be removed without breaking
+     the user's mental model?
+   - What interactions are load-bearing vs. decorative?
+
+2. INTERROGATE each axiom: "Is this truly atomic? Does removing it collapse
+   the experience? Does it contradict scalability or simplicity?"
+
+3. DEDUCTIVE BUILD — Every feature, component, and design decision must be
+   derived from your axioms. No feature added from habit or assumption.
+
+4. IMPLEMENT with these non-negotiable standards derived from the axioms:
+   - Design system: define CSS custom properties (tokens) for color, spacing,
+     typography FIRST — never hardcode values
+   - Mobile-first: base styles for 375px, enhanced for 768px+
+   - Performance: no blocking resources, all assets inline or CDN
+   - Data: localStorage with a schema that mirrors what a real DB table would
+     look like (so migration is trivial)
+   - Animations: CSS transitions only, respects prefers-reduced-motion
+   - Accessibility: semantic HTML, aria labels, keyboard navigable
+
+5. FEATURES to derive deductively (include only what axioms justify):
+   - Daily intake goal (configurable, default 2.5L)
+   - Quick-add buttons (common cup/bottle sizes)
+   - Visual progress indicator (ring or bar — choose based on axiom for
+     "progress visible at a glance")
+   - Daily history (last 7 days minimum)
+   - Streak counter (behavioral reinforcement axiom)
+   - Hydration reminders (browser Notification API)
+   - Unit toggle (ml / oz)
+
+VERIFICATION:
+After building, check each decision against your stated axioms:
+- Does every UI element trace to an axiom?
+- Is there anything present that no axiom justifies? Remove it.
+- Does the data model support a million-user backend migration with zero
+  schema changes?
+- Does the design pass the "glance test" — can a user know their status in
+  under 2 seconds?
+- Run through the app as a first-time user with no instructions. Does it
+  work without explanation?
+```
+
+---
+
 ## Quick Mode
 
 Say **"quick improve"** to skip the clarification questions. The skill makes reasonable assumptions and labels each one explicitly as ASSUMED (not confirmed).
