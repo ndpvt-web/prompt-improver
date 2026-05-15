@@ -9,38 +9,22 @@ Transform vague prompts into clear, specific, actionable ones for better AI resp
 
 ## Workflow
 
-1. **Ask mode** - Use AskUserQuestion to ask which mode to use:
-   - Aristotelian (recommended): produces a prompt that instructs the AI to reason from first principles
-   - Standard: clarifies and restructures the prompt for better wording and specificity
-
-   If user already said "Aristotelian", "first principles", "proof-based", or "standard" — skip this step and use the stated mode.
-
-2. **Gather context** - Use AskUserQuestion to clarify:
+1. **Gather context** - Use AskUserQuestion to clarify:
    - Target platform (Claude Code, ChatGPT, API, image gen)
    - Priority (accuracy, speed, depth, creativity)
    - Missing context (technical stack, constraints, examples)
 
-3. **Analyze** - Identify what's unclear, missing, or ambiguous
+   Use AskUserQuestion as many times as needed to resolve any doubts or assumptions before proceeding.
 
-4. **Improve** - Apply the framework for the chosen mode
+2. **Analyze** - Identify what's unclear, missing, or ambiguous
 
-5. **Present** - Show improved prompt with key changes explained
+3. **Improve** - Apply the Aristotelian framework
 
-6. **Refine** - Ask if user wants adjustments
+4. **Present** - Show improved prompt with key changes explained
+
+5. **Refine** - Ask if user wants adjustments
 
 ## AskUserQuestion Templates
-
-**Mode selection (always first, unless mode already stated):**
-```
-questions:
-  - header: "Mode"
-    question: "Which mode do you want to use?"
-    options:
-      - label: "Aristotelian (Recommended)"
-        description: "Tells the AI to reason from first principles — define terms, build deductively, trace every decision. Better outputs on complex tasks."
-      - label: "Standard"
-        description: "Clarifies and restructures the prompt for better wording and specificity."
-```
 
 **Initial clarification:**
 ```
