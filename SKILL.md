@@ -87,7 +87,7 @@ If user says "quick improve", skip questions and make reasonable assumptions. No
 
 ## Aristotelian Mode (First Principles)
 
-Activated when user says "Aristotelian", "first principles", or "proof-based". Instead of the standard framework, produce a prompt that **instructs the receiving LLM to reason from first principles** when executing the task.
+Always active. Produces a prompt that **instructs the receiving LLM to reason from first principles** when executing the task.
 
 The prompt-improver does NOT do the Aristotelian reasoning itself. It crafts a prompt that tells the LLM to:
 
