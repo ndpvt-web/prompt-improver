@@ -1,0 +1,28 @@
+{
+  "name": "prompt-improver",
+  "owner": {
+    "name": "ndpvt-web",
+    "url": "https://github.com/ndpvt-web"
+  },
+  "plugins": [
+    {
+      "name": "prompt-improver",
+      "source": ".",
+      "description": "Optimize prompts for better AI responses using Aristotelian first-principles reasoning. Transforms vague requests into clear, specific, axiom-grounded prompts.",
+      "author": {
+        "name": "ndpvt-web",
+        "url": "https://github.com/ndpvt-web"
+      },
+      "homepage": "https://github.com/ndpvt-web/prompt-improver",
+      "repository": "https://github.com/ndpvt-web/prompt-improver",
+      "license": "MIT",
+      "keywords": [
+        "prompt-engineering",
+        "ai",
+        "aristotelian",
+        "first-principles",
+        "prompt-improvement"
+      ]
+    }
+  ]
+}

@@ -1,13 +1,31 @@
 # Prompt Improver
 
-A Claude Code skill that transforms vague AI prompts into clear, specific, actionable ones using Aristotelian first-principles reasoning.
+A Claude Code plugin that transforms vague AI prompts into clear, specific, actionable ones using Aristotelian first-principles reasoning.
 
 ## Installation
 
-```bash
-git clone https://github.com/ndpvt-web/prompt-improver.git
-cp -r prompt-improver ~/.claude/skills/prompt-improver
+### Claude Code
+
 ```
+/plugin marketplace add github ndpvt-web/prompt-improver
+/plugin install prompt-improver
+```
+
+Then invoke:
+
+```
+/prompt-improver:prompt-improver
+```
+
+### All other agents (Codex, Gemini, Cursor, Aider, and 50+ more)
+
+```bash
+npx skills add ndpvt-web/prompt-improver
+```
+
+Uses [skills.sh](https://skills.sh) — installs to the correct directory for whichever agent(s) you use.
+
+---
 
 ## How It Works
 
@@ -27,7 +45,7 @@ Once context is clear, it produces a prompt structured around Aristotelian first
 
 - What format is the sales data in? (CSV, database, API?)
 - Where should the report be sent? (Email, Slack, dashboard?)
-- What defines a "week"? (Calendar week, rolling 7 days?)
+- What defines a “week”? (Calendar week, rolling 7 days?)
 - Who is the audience — technical or non-technical?
 
 ### Output (Aristotelian prompt)
@@ -60,8 +78,8 @@ Once context is clear, it produces a prompt structured around Aristotelian first
 
 - What environment will this run in? *(Claude Code / HappyCapy workspace confirmed)*
 - What stack is available? *(static HTML, CDN frameworks, no npm confirmed)*
-- What's the scalability requirement? *(millions of concurrent users confirmed)*
-- What does "world class design" mean to you? *(WCAG AA, mobile-first, micro-animations confirmed)*
+- What’s the scalability requirement? *(millions of concurrent users confirmed)*
+- What does “world class design” mean to you? *(WCAG AA, mobile-first, micro-animations confirmed)*
 
 > The axioms in the improved prompt below are not invented — each one came from the user answering a real question.
 
@@ -104,7 +122,7 @@ METHOD (apply to this task):
    - What is the minimum data model that cannot be removed without breaking
      the app?
    - What is the minimum UI surface that cannot be removed without breaking
-     the user's mental model?
+     the user’s mental model?
    - What interactions are load-bearing vs. decorative?
 
 2. INTERROGATE each axiom: "Is this truly atomic? Does removing it collapse
@@ -149,7 +167,7 @@ After building, check each decision against your stated axioms:
 
 ## Quick Mode
 
-Say **"quick improve"** to skip the clarification questions. The skill makes reasonable assumptions and labels each one explicitly as ASSUMED (not confirmed).
+Say **“quick improve”** to skip the clarification questions. The skill makes reasonable assumptions and labels each one explicitly as ASSUMED (not confirmed).
 
 ---
 
@@ -157,7 +175,12 @@ Say **"quick improve"** to skip the clarification questions. The skill makes rea
 
 ```
 prompt-improver/
-  SKILL.md                   # Main skill definition
+  .claude-plugin/
+    plugin.json              # Plugin manifest
+    marketplace.json         # Marketplace manifest
+  skills/
+    prompt-improver/
+      SKILL.md               # Skill definition (plugin layout)
   references/
     framework.md             # 6-principle improvement framework
     aristotelian.md          # First principles methodology

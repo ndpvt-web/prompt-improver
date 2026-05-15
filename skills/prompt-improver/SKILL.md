@@ -56,11 +56,11 @@ The prompt-improver does NOT do the Aristotelian reasoning itself. It crafts a p
 - Bakes in [specific context] so the LLM does not hallucinate it
 ```
 
-See references/aristotelian.md for the full methodology and prompt structure.
+See `${CLAUDE_PLUGIN_ROOT}/references/aristotelian.md` for the full methodology and prompt structure.
 
 ## References
 
-- **Aristotelian mode**: See references/aristotelian.md for the proof-based first principles methodology
-- **Examples**: See references/examples.md for before/after transformations
-- **Anti-patterns**: See references/anti-patterns.md for common issues to fix
-- **Framework details**: See references/framework.md for the 6-principle improvement framework
+- **Aristotelian mode**: `${CLAUDE_PLUGIN_ROOT}/references/aristotelian.md` — proof-based first principles methodology
+- **Examples**: `${CLAUDE_PLUGIN_ROOT}/references/examples.md` — before/after transformations
+- **Anti-patterns**: `${CLAUDE_PLUGIN_ROOT}/references/anti-patterns.md` — common issues to fix
+- **Framework details**: `${CLAUDE_PLUGIN_ROOT}/references/framework.md` — 6-principle improvement framework
