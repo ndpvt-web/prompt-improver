@@ -1,6 +1,6 @@
 # Prompt Improver
 
-A Claude Code skill that transforms vague AI prompts into clear, specific, actionable ones.
+A Claude Code skill that transforms vague AI prompts into clear, specific, actionable ones using Aristotelian first-principles reasoning.
 
 ## Installation
 
@@ -9,59 +9,50 @@ git clone https://github.com/ndpvt-web/prompt-improver.git
 cp -r prompt-improver ~/.claude/skills/prompt-improver
 ```
 
-## Modes
+## How It Works
 
-### Standard Mode
+Invoke the skill with any prompt. Before improving it, the skill uses `AskUserQuestion` — as many times as needed — to clarify any doubts or assumptions about your context, platform, constraints, or goal. Nothing is assumed. Everything is confirmed.
 
-Invoke the skill and it walks you through clarification questions, then produces an improved prompt. Good for prompts that just need clearer wording.
-
-### Aristotelian Mode (Recommended)
-
-Say **"Aristotelian"**, **"first principles"**, or **"proof-based"** when you invoke the skill.
-
-Instead of just cleaning up your prompt, it produces a prompt that tells the AI to **reason from ground truths upward** — define its terms, build deductively, trace every decision to a stated axiom.
-
-Use this by default. It does everything Standard mode does, plus it changes how the downstream AI reasons. The difference shows up most on complex tasks where getting the foundation wrong cascades into failure.
+Once context is clear, it produces a prompt structured around Aristotelian first principles: baked-in axioms, reasoning directives, axiom discovery, interrogation, and verification steps.
 
 ---
 
-## Examples
+## Example
 
-### Standard: Vague to Specific
+### Input
 
-**Before:**
-> help me write some code
+> Create a system that reads sales data and sends a weekly report
 
-**After:**
-> Write a Python function that validates email addresses.
-> - Accept a string input, return boolean
-> - Check for valid format (user@domain.tld)
-> - Handle edge cases: empty string, missing @, multiple dots
-> - Include docstring with examples
-> - No external dependencies
+### What the skill asks (examples)
 
-### Aristotelian: From Two Words to a Real Brief
+- What format is the sales data in? (CSV, database, API?)
+- Where should the report be sent? (Email, Slack, dashboard?)
+- What defines a "week"? (Calendar week, rolling 7 days?)
+- Who is the audience — technical or non-technical?
 
-**Before:**
-> build a world-class website
+### Output (Aristotelian prompt)
 
-**After:**
-> **Reasoning Directive:** Before acting, define "world-class website" from first principles. Do not pattern-match to averages.
+> **Reasoning Directive:** Before acting, reason from first principles. Do not assume anything that cannot be traced to a verified ground truth.
 >
 > **Given Axioms:**
-> - You have access to HTML, CSS, JS, and a Linux environment
-> - The goal is a live, production-grade site
+> - Sales data is in CSV format, updated daily at midnight
+> - Report is delivered via email every Monday at 9am
+> - Audience is non-technical (no raw numbers — trends and summaries only)
+> - Python environment with pandas and smtplib available
 >
-> **Method:**
-> 1. Define "world-class": decompose into speed, visual hierarchy, accessibility, conversion patterns, trust signals
-> 2. Interrogate each: can it be measured? does it contradict anything else?
-> 3. Build from those definitions, tracing every decision to a specific axiom
+> **Axiom Discovery:** Identify what must be true for this pipeline to succeed. What, if false, breaks it?
 >
-> **Verification:** Check the result against each axiom. Does it satisfy them all?
+> **Task:** Build a weekly sales report pipeline
+>
+> **Method:** For each implementation decision, trace it back to an axiom. If you cannot justify a step, stop and identify what is missing.
+>
+> **Verification:** After completion, check the output against every axiom. Does it satisfy them all?
 
-### Quick Mode
+---
 
-Say **"quick improve"** to skip questions. The skill makes reasonable assumptions and states them explicitly.
+## Quick Mode
+
+Say **"quick improve"** to skip the clarification questions. The skill makes reasonable assumptions and labels each one explicitly as ASSUMED (not confirmed).
 
 ---
 
