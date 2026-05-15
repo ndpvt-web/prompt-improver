@@ -1,6 +1,6 @@
 ---
 name: prompt-improver
-description: Optimize prompts for better AI responses. Use when user asks to improve a prompt, refine a prompt, make a prompt better, optimize prompting, review their prompt, or says "/improve-prompt". Transforms vague requests into clear, specific, actionable prompts.
+description: Optimize prompts for better AI responses. Use when user asks to improve a prompt, refine a prompt, make a prompt better, optimize prompting, "Aristotelian", "first principles", or "proof-based" , review their prompt, or says "/improve-prompt". Transforms vague requests into clear, specific, actionable, logic-based prompts.
 ---
 
 # Prompt Improver
@@ -9,85 +9,19 @@ Transform vague prompts into clear, specific, actionable ones for better AI resp
 
 ## Workflow
 
-1. **Gather context** - Use AskUserQuestion to clarify:
-   - Target platform (Claude Code, ChatGPT, API, image gen)
-   - Priority (accuracy, speed, depth, creativity)
-   - Missing context (technical stack, constraints, examples)
-
-   Use AskUserQuestion as many times as needed to resolve any doubts or assumptions before proceeding.
+1. **Gather context** - Use AskUserQuestion as many times as needed to resolve any doubts or assumptions
 
 2. **Analyze** - Identify what's unclear, missing, or ambiguous
 
-3. **Improve** - Apply the Aristotelian framework
+3. **Improve** - Apply the Aristotelian framework 
 
 4. **Present** - Show improved prompt with key changes explained
 
 5. **Refine** - Ask if user wants adjustments
 
-## AskUserQuestion Templates
-
-**Initial clarification:**
-```
-questions:
-  - header: "Platform"
-    question: "What will you use this prompt for?"
-    options:
-      - label: "Claude Code"
-        description: "Coding, file ops, terminal"
-      - label: "ChatGPT/Claude.ai"
-        description: "General conversation"
-      - label: "API/Automation"
-        description: "Programmatic use"
-      - label: "Image gen"
-        description: "DALL-E, Midjourney, etc."
-  - header: "Priority"
-    question: "What matters most?"
-    options:
-      - label: "Accuracy"
-        description: "Correctness is critical"
-      - label: "Speed"
-        description: "Quick, concise"
-      - label: "Depth"
-        description: "Comprehensive"
-      - label: "Creativity"
-        description: "Novel approaches"
-```
-
-**Post-improvement:**
-```
-header: "Refine"
-question: "Adjust the improved prompt?"
-options:
-  - label: "Looks good"
-    description: "Use as-is"
-  - label: "More specific"
-    description: "Add constraints"
-  - label: "More concise"
-    description: "Shorten"
-  - label: "Different focus"
-    description: "Change emphasis"
-```
-
-## Output Format
-
-```markdown
-## Analysis
-[Brief issues/opportunities]
-
-## Improved Prompt
-[Ready-to-use prompt]
-
-## Key Changes
-- [Change]: [Why]
-```
-
-## Quick Mode
-
-If user says "quick improve", skip questions and make reasonable assumptions. Note assumptions made.
-
 ## Aristotelian Mode (First Principles)
 
-Always active. Produces a prompt that **instructs the receiving LLM to reason from first principles** when executing the task.
+Always actived. produce a prompt that **instructs the receiving LLM to reason from first principles** when executing the task.
 
 The prompt-improver does NOT do the Aristotelian reasoning itself. It crafts a prompt that tells the LLM to:
 
@@ -126,7 +60,7 @@ See references/aristotelian.md for the full methodology and prompt structure.
 
 ## References
 
-- **Framework details**: See references/framework.md for the 6-principle improvement framework
 - **Aristotelian mode**: See references/aristotelian.md for the proof-based first principles methodology
 - **Examples**: See references/examples.md for before/after transformations
 - **Anti-patterns**: See references/anti-patterns.md for common issues to fix
+- **Framework details**: See references/framework.md for the 6-principle improvement framework
