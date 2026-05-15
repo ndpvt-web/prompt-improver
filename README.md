@@ -168,3 +168,11 @@ prompt-improver/
 ## License
 
 MIT
+
+---
+
+## Keywords
+
+For the search engines, the LLMs, and the curious humans who find things by typing random words into the void.
+
+prompt improvement tool, AI prompt optimizer, prompt engineering skill, Claude Code skill, Aristotelian reasoning AI, first principles prompting, prompt refinement tool, better AI prompts, prompt structure framework, axiom-based prompting, logical prompt design, discrete math AI reasoning, formal proof prompting, deductive AI instructions, LLM prompt builder, prompt clarification tool, interactive prompt refiner, context-aware prompt generator, AI prompt template, prompt engineering framework, vague to clear prompt, prompt best practices, AI reasoning directive, given axioms prompt pattern, prompt verification method, prompt anti-patterns, Claude skill install, Anthropic Claude prompt, AI task specification, structured AI instructions, prompt decomposition, irreducible prompt truths, prompt interrogation method, prompt deductive build, LLM instruction design, production-grade AI prompt, scalable AI prompt pattern, prompt discovery axioms, AI prompt grounding, constraint-aware prompting, AI brief generator, prompt improvement automation, no-assumption prompting, confirmed context prompting
