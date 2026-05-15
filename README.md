@@ -1,12 +1,20 @@
 # Prompt Improver
 
-A Claude Code skill that transforms vague AI prompts into clear, specific, actionable ones using Aristotelian first-principles reasoning.
+A Claude Code plugin that transforms vague AI prompts into clear, specific, actionable ones using Aristotelian first-principles reasoning.
 
 ## Installation
 
-```bash
-git clone https://github.com/ndpvt-web/prompt-improver.git
-cp -r prompt-improver ~/.claude/skills/prompt-improver
+In Claude Code, run:
+
+```
+/plugin marketplace add github ndpvt-web/prompt-improver
+/plugin install prompt-improver
+```
+
+Then invoke the skill:
+
+```
+/prompt-improver:prompt-improver
 ```
 
 ## How It Works
@@ -157,7 +165,12 @@ Say **"quick improve"** to skip the clarification questions. The skill makes rea
 
 ```
 prompt-improver/
-  SKILL.md                   # Main skill definition
+  .claude-plugin/
+    plugin.json              # Plugin manifest
+    marketplace.json         # Marketplace manifest
+  skills/
+    prompt-improver/
+      SKILL.md               # Skill definition (plugin layout)
   references/
     framework.md             # 6-principle improvement framework
     aristotelian.md          # First principles methodology

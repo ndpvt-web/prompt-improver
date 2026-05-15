@@ -9,7 +9,6 @@
       "name": "prompt-improver",
       "source": ".",
       "description": "Optimize prompts for better AI responses using Aristotelian first-principles reasoning. Transforms vague requests into clear, specific, axiom-grounded prompts.",
-      "version": "1.0.0",
       "author": {
         "name": "ndpvt-web",
         "url": "https://github.com/ndpvt-web"
